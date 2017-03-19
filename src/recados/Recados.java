@@ -5,6 +5,8 @@
  */
 package recados;
 
+import View.Menu;
+
 /**
  *
  * @author Jean
@@ -16,7 +18,7 @@ public class Recados {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("teste");
+        Menu inserir = new Menu();
     }
     
 }
