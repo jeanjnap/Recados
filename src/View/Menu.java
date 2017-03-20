@@ -25,23 +25,7 @@ public class Menu extends javax.swing.JFrame {
         
     }
     
-    private void mnSairActionPerformed(java.awt.event.ActionEvent evt){
-        this.dispose();
-    }
     
-    private void mnInserirActionPerformed(java.awt.event.ActionEvent evt) {
-        Inserir inserir = new Inserir();
-        pnl_menu.removeAll();
-        pnl_menu.add(inserir);
-        pnl_menu.updateUI();
-    }
-
-    private void mnVisualizarActionPerformed(java.awt.event.ActionEvent evt) {
-        Visualizar visualizar = new Visualizar();
-        pnl_menu.removeAll();
-        pnl_menu.add(visualizar);
-        pnl_menu.updateUI();
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -54,8 +38,8 @@ public class Menu extends javax.swing.JFrame {
         pnl_menu = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
-        mnVisualizar = new javax.swing.JMenuItem();
         mnInserir = new javax.swing.JMenuItem();
+        mnVisualizar = new javax.swing.JMenuItem();
         sair = new javax.swing.JMenu();
         mnSair = new javax.swing.JMenuItem();
 
@@ -74,17 +58,32 @@ public class Menu extends javax.swing.JFrame {
 
         menu.setText("Menu");
 
-        mnVisualizar.setText("Vizualizar");
-        menu.add(mnVisualizar);
-
         mnInserir.setText("Inserir");
+        mnInserir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnInserirActionPerformed(evt);
+            }
+        });
         menu.add(mnInserir);
+
+        mnVisualizar.setText("Vizualizar");
+        mnVisualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnVisualizarActionPerformed(evt);
+            }
+        });
+        menu.add(mnVisualizar);
 
         jMenuBar1.add(menu);
 
         sair.setText("Sair");
 
         mnSair.setText("Sair");
+        mnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnSairActionPerformed(evt);
+            }
+        });
         sair.add(mnSair);
 
         jMenuBar1.add(sair);
@@ -104,6 +103,24 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mnVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnVisualizarActionPerformed
+        Visualizar visualizar = new Visualizar();
+        pnl_menu.removeAll();
+        pnl_menu.add(visualizar);
+        pnl_menu.updateUI();
+    }//GEN-LAST:event_mnVisualizarActionPerformed
+
+    private void mnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnInserirActionPerformed
+        Inserir inserir = new Inserir();
+        pnl_menu.removeAll();
+        pnl_menu.add(inserir);
+        pnl_menu.updateUI();
+    }//GEN-LAST:event_mnInserirActionPerformed
+
+    private void mnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnSairActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_mnSairActionPerformed
 
     /**
      * @param args the command line arguments
