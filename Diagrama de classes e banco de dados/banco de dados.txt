@@ -1,0 +1,10 @@
+CREATE DATABASE recados;
+
+USE recados;
+
+CREATE TABLE recados(
+  id   int(5) auto_increment, 
+  setor     varchar(100),
+  titulo varchar(255),
+  mensagem   varchar(1000),
+PRIMARY KEY (id));
